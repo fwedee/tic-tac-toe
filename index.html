@@ -5,7 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic Tac To</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="index.js" defer></script>
+    <script src="game.js" defer></script>
   </head>
-  <body></body>
+  <body>
+    <div id="name-modal" class="modal">
+      <div class="modal-content">
+        <h2>Enter Player Names</h2>
+        <div class="player-names">
+          <div class="name-input">
+            <label for="player-x">Player X</label>
+            <input type="text" id="player-x" placeholder="Enter name" />
+          </div>
+          <div class="name-input">
+            <label for="player-o">Player O</label>
+            <input type="text" id="player-o" placeholder="Enter name" />
+          </div>
+        </div>
+        <button class="start-game" onclick="GameController.startGame()">
+          Start Game
+        </button>
+      </div>
+    </div>
+
+    <h1>Tic Tac To</h1>
+
+    <div class="scoreboard">
+      <div class="score">
+        <div class="label" id="label-x">Player X</div>
+        <div id="score-x">0</div>
+      </div>
+      <div class="score">
+        <div class="label">Draw</div>
+        <div id="score-draw">0</div>
+      </div>
+      <div class="score">
+        <div class="label" id="label-o">Player O</div>
+        <div id="score-o">0</div>
+      </div>
+    </div>
+
+    <h2 id="turn">Player X's turn</h2>
+
+    <div class="board"></div>
+    <div class="buttons">
+      <button id="start" onclick="GameController.resetGame()">
+        Reset game
+      </button>
+      <button id="reset" onclick="GameController.resetScores()">
+        Reset scores
+      </button>
+    </div>
+  </body>
 </html>
